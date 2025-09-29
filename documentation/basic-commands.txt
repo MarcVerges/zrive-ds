@@ -1,0 +1,73 @@
+COMANDOS PYTHON IMPORTANTES
+---------------------------------------------------------------------------------------
+
+* IMPORT LIBRERIAS
+---------------------------------------------------------------------------------------
+- import .docu    --> docu.variable (todas pero hay que poner lo de variable delante)
+- from .docu import * --> variables / funcs (todas)
+- from .docu import variable --> variable (solo esa)
+- El punto sirve para indicar que estas en el mismo directorio
+
+
+
+* Gestión de diccionarios
+---------------------------------------------------------------------------------------
+Acceder a un valor --> dato["ciudad"] nos da el valor asociado a la ciudad.
+
+
+Añadir o actualizar un elemento
+                                 -> dato["viento"] = 5.3      # añadir nueva clave
+                                 -> dato["temperatura"] = 22  # actualizar valor existente
+
+
+Eliminar elemento --> del dato["viento"]
+
+
+
+Recorrer un diccionario
+                         for clave, valor in dato.items():
+                              print(clave, valor)
+
+
+
+Verificar si una clave existe --> "ciudad" in dato    # True
+                              --> "precipitacion" in dato  # False
+
+
+
+* Definir funciones (con input i outputs parametrizados) 
+---------------------------------------------------------------------------------------
+- def promedio(valores: list[float]) -> float: 
+ ( list tiene que ser de tipo float i la salida también tiene que ser de tipo float)
+
+- def obtener_meteo(lat: float, lon: float, fecha: str) -> tuple[float, float, float]:
+
+
+* Uso de plot 
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10,5))
+
+for col in df.columns:  # recorre todas las series
+    plt.plot(df.index, df[col], label=col)  # eje X = df.index, eje Y = df[col]
+
+plt.title("Temperaturas por ciudad")
+plt.xlabel("Mes")
+plt.ylabel("Temperatura")
+plt.legend()  # muestra la leyenda
+plt.grid(True)  # activa la cuadrícula
+plt.show()
+
+
+* Uso de monkey patch para testing
+---------------------------------------------------------------------------------------
+- def test_get_data_meteo_api(monkeypatch): HAY QUE PASARLO COMO PARAMETRO 
+
+- monkeypatch.setattr(func, "generic_API_call", lambda url, cooldown, tries, params: var.mock_data) --> en la funcion generic app call se le pasant los paramatetros con la funcion lambda (que es anonima) i devuelve el valor que esta despues de los dos puntos
+
+- assert valor == data o true etc... esto marca para que el test se pueda saber si es correcto o no 
+
+- assert isinstance(result, list) # compruva que el retorno sea una lista
+
+

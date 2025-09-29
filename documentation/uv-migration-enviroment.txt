@@ -1,0 +1,40 @@
+PASOS PARA MODIFICAR UN REPO POETRY A UV (PARA MAC OS)
+--------------------------------------------------------------------------------------
+1.- Abrir Visual studio Code --> Terminal --> nueva terminal
+2.- Instalamos UV [brew install uv]    
+3.- Comprobamos version [uv --version]
+4.- Realizar clone del repositorio forkeado (el vuestro!!) [git clone <<link https>>] en terminal
+5.- Abrir el repositorio clonado [ls] os enseña los directorios, cuando veáis el nombre del de zrive (zrive-ds) realizar [cd zrive-ds]
+6.- Escribir una vez estáis dentro del repositorio: [code .] eso debería abrir una nueva ventana donde se muestran en la barra lateral todos los documentos del proyecto.
+7.- Modificar el documento pyproject.toml para que sea compatible con UV (pegar esto): 
+
+----------------------------------------------------------------------
+[project]
+
+name = "zrive-ds"
+version = "0.1.0"
+description = "Project for the program Zrive Applied Data Science"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "pandas>=2.0.3,<3.0.0",
+    "matplotlib>=3.7.2,<4.0.0",
+    "numpy>=1.25.2,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "black>=23.7.0,<24.0.0",
+    "flake8>=6.1.0,<7.0.0",
+    "mypy>=1.5.1,<2.0.0",
+    "pytest>=7.4.0,<8.0.0",
+    "scikit-learn>=1.4.1.post1,<2.0.0"
+]
+
+[build-system]
+
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+----------------------------------------------------------------------
+
+7.- [uv sync] esto genera el entrono virtual y agrega las dependencias del pyproject.toml
+8.- [uv lock] Bloquea versiones exactas (recomendado por no obligatorio).
+9.- [rm poetry.lock] Elimina el documento lock de poetry (al realizar uv sync, se ha creado ya un uv.lock que es el que se utiliza en el proyecto).

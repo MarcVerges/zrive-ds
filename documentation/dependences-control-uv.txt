@@ -1,0 +1,7 @@
+CONTROLAR DEPENDENCIAS AISLADAS 
+------------------------------------------------------
+1.- [cd] hasta el directorio 
+2.- [uv init]
+3.- [uv add <<nombre de la libreria>>]
+4.- [uv sync] -> crea entrono virtual I adde las librarias
+5.- [uv lock] 
