@@ -71,3 +71,12 @@ plt.show()
 - assert isinstance(result, list) # compruva que el retorno sea una lista
 
 
+* Comandos para correr programas
+---------------------------------------------------------------------------------------
+uv run python -m tests.module_1.test_meteo_api
+uv run pytest tests/module_1 -v 
+uv run python -m black src/module_1
+
+git add .   
+git commit -m "Module_1_full" 
+git push    
