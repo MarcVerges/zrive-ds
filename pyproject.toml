@@ -1,23 +1,29 @@
-[tool.poetry]
+[project]
+
 name = "zrive-ds"
 version = "0.1.0"
 description = "Project for the program Zrive Applied Data Science"
-authors = ["Guille Barquero <gb@zriveapp.com>"]
 readme = "README.md"
+requires-python = ">=3.11"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-pandas = "^2.0.3"
-matplotlib = "^3.7.2"
-numpy = "^1.25.2"
-requests = "^2.31.0"
-black = "^23.7.0"
-flake8 = "^6.1.0"
-mypy = "^1.5.1"
-pytest = "^7.4.0"
-scikit-learn = "^1.4.1.post1"
-
+dependencies = [
+    "pandas>=2.0.3,<3.0.0",
+    "matplotlib>=3.7.2,<4.0.0",
+    "numpy>=1.25.2,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "black>=23.7.0,<24.0.0",
+    "flake8>=6.1.0,<7.0.0",
+    "mypy>=1.5.1,<2.0.0",
+    "pytest>=7.4.0,<8.0.0",
+    "scikit-learn>=1.4.1.post1,<2.0.0",
+    "openmeteo-requests>=1.7.2",
+    "jsonschema>=4.25.1",
+    "dotenv>=0.9.9",
+    "boto3>=1.40.45",
+    "pyarrow>=21.0.0",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
