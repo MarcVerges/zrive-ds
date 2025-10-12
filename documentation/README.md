@@ -1,0 +1,1 @@
+This folder will contain .txt files that illustrate some commands and procedures used in the project for developer reference and reminders. It is not an essential part of the code and will not be uploaded to GitHub.
